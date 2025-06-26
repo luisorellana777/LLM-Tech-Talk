@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "6b711b8e-cfc7-46b6-824d-86809304e260",
+		"name": "1- Multilayer Perceptron - Transformer Model - LLM Distillation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3581147"
+	},
+	"item": [
+		{
+			"name": "Vertex AI - Base Model",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"description": "gcloud auth print-access-token"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"instances\": [\r\n        {\r\n            \"@requestFormat\": \"chatCompletions\",\r\n            \"messages\": [\r\n                {\r\n                    \"role\": \"user\",\r\n                    \"content\": \"Tell me something interesting about yourself as a predictive model\"\r\n                }\r\n            ],\r\n            \"temperature\": 0.8,\r\n            \"max_new_tokens\": -1,\r\n            \"top_k\": 50,\r\n            \"top_p\": 1.0,\r\n            \"repetition_penalty\": 1.2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{BASE_ENDPOINT}}/v1/projects/{{PROJECT_ID}}/locations/{{REGION}}/endpoints/{{BASE_ENDPOINT_ID}}:predict",
+					"protocol": "https",
+					"host": [
+						"{{BASE_ENDPOINT}}"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"{{PROJECT_ID}}",
+						"locations",
+						"{{REGION}}",
+						"endpoints",
+						"{{BASE_ENDPOINT_ID}}:predict"
+					]
+				},
+				"description": "Generated from cURL: curl \\\r\n-X POST \\\r\n-H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\\r\n-H \"Content-Type: application/json\" \\\r\n\"https://6772477055658360832.us-east4-198380589718.prediction.vertexai.goog/v1/projects/${PROJECT_ID}/locations/us-east4/endpoints/${ENDPOINT_ID}:predict\" \\\r\n-d \"@${INPUT_DATA_FILE}\""
+			},
+			"response": []
+		}
+	]
+}

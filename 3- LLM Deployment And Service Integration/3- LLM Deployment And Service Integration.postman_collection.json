@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "ffc4786e-8f5b-4362-a89f-0181d3620056",
+		"name": "3- LLM Deployment And Service Integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3581147"
+	},
+	"item": [
+		{
+			"name": "Local - Medical Reasoning",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"question\": \"Given the following medical exam of a patient who is 69 years old. Sleep apnea. Attention deficit disorder. The patient is obese and sedentary. Poor short-term memory. She has diabetes and high blood pressure., what is the most likely diagnosis?\\n Medical History:\\n Findings:\\n Midline structures are well centered.\\n Ventricular system of preserved volume.\\n Basal subarachnoid cisterns are clear.\\n Multiple small hyperintense foci on T2/FLAIR in the supratentorial white matter with subcortical distribution, suggestive of microangiopathic changes.\\n No cortical lesions observed, nor in the deep white matter or basal ganglia.\\n In the posterior fossa, the fourth ventricle is midline.\\n Brainstem and cerebellum are without alterations.\\n Cerebellopontine angles are clear.\\n Symmetric cortical sulci.\\n No extra-axial collections observed.\\n Sellar arachnoidocele.\\n With intravenous contrast, no pathological enhancements are observed.\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/medical-diagnosis",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"medical-diagnosis"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://127.0.0.1:8000/value \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -d '{\"prompt\": \"Tell me a joke\"}'"
+			},
+			"response": []
+		}
+	]
+}

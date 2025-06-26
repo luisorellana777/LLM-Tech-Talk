@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "b698e13c-0036-4b1e-8385-a49376a74844",
+		"name": "4- Retrieval-augmented Generation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3581147"
+	},
+	"item": [
+		{
+			"name": "Mandate Embedding",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"content\": {\n     \"parts\":[{\n     \"text\": \"Compra de remedios de costo alto para personas de escasos recursos.\"}]}\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key={{GEMINI_KEY}}",
+					"protocol": "https",
+					"host": [
+						"generativelanguage",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"v1beta",
+						"models",
+						"text-embedding-004:embedContent"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{GEMINI_KEY}}"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl \"https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-exp-03-07:embedContent?key=$GEMINI_API_KEY\" \\\n-H 'Content-Type: application/json' \\\n-d '{\"model\": \"models/gemini-embedding-exp-03-07\",\n     \"content\": {\n     \"parts\":[{\n     \"text\": \"What is the meaning of life?\"}]}\n    }'"
+			},
+			"response": []
+		},
+		{
+			"name": "Prioritize Mandates Gemini",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"contents\": [{\n    \"parts\":[{\"text\": \"Analiza las tareas históricas para comprender los patrones en los que se realizaron tareas con bajo costo y alto beneficio.\\nPara las siguientes tarea entrantes, compare su descripción con las tareas históricas para inferir su perfil de costo y beneficio potencial.\\nOrdena las 'Tareas entrantes' en orden descendente, dando preferencia a las tareas que se prevé que tengan un costo mínimo y un beneficio máximo. Entrega solo el resumen como en formato json, incluyendo solo los campos 'description', 'inferredCost'(rango numerico), 'inferredBenefit'(valor numerico) y 'priority'(Crítica, Muy alta, Alta, Media, Baja, Muy baja, Mínima), reason(razon por la cual proyectaste la proridad): \\nTareas entrantes:\\n*.\\nCompra de remedios de costo alto para personas de escasos recursos.\\n*.\\nAyudas sociales tales como compra de insumos de personas psotradas o movilizacion de personas con deficiencia renal.\"}],\n    \"role\": \"user\"\n    }],\"generationConfig\": { \"response_mime_type\": \"application/json\" },\n      \"systemInstruction\": {\n    \"parts\": [\n      {\n        \"text\": \"Solo utiliza español. No alucines. Eres un sistema de recomendación de tareas para municipios. Su trabajo consiste en analizar una lista de tareas históricas (cada una con una descripción detallada, una puntuación de costo y una puntuación de beneficio) y luego utilizar esos datos históricos para recomendar y clasificar un conjunto de nuevas tareas entrantes que no tienen puntuaciones de costo y beneficio. Sus recomendaciones deben priorizar las tareas que, según patrones históricos, probablemente tengan costos más bajos y beneficios más altos.\\n Tareas históricas:\\n*Descripción de la tarea: Subvenciones de organizaciones comunitarias y territoriales para financiamiento.\\nCosto (numérico; cuanto menor, mejor): 200.000 – 3.000.000\\nPuntaje de beneficio (numérico; cuanto mayor, mejor): 90\\n*Descripción de la tarea: Financiamiento animalistas o organización comunitaria.\\nCosto (numérico; cuanto menor, mejor): 500.000 \\nPuntaje de beneficio (numérico; cuanto mayor, mejor): 80\\n*Descripción de la tarea: Bomberos: combustible e infraestructura.\\nCosto (numérico; cuanto menor, mejor): 10.000.000 - 50.000.000\\nPuntaje de beneficio (numérico; cuanto mayor, mejor): 95\"\n      }\n    ],\n    \"role\": \"model\"\n  }\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={{GEMINI_KEY}}",
+					"protocol": "https",
+					"host": [
+						"generativelanguage",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"v1beta",
+						"models",
+						"gemini-2.0-flash:generateContent"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{GEMINI_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
