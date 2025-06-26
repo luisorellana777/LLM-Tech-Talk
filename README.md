@@ -6,11 +6,11 @@ This repository contains three presentations covering key concepts in Large Lang
 3. LLM Deployment And Service Integration
 4. Retrieval-Augmented Generation (RAG)
 
-**Presentation 1**: Multilayer Perceptron - Transformer Model - LLM Distillation
+## Presentation 1: Multilayer Perceptron - Transformer Model - LLM Distillation
 
 This presentation provides a theoretical perspective on neural networks, focusing on the Transformer model and LLM Distillation.
 
-## Key Topics:
+**Key Topics:**
 
 * Multilayer Perceptron
 * Transformer Model:
@@ -25,11 +25,11 @@ This presentation provides a theoretical perspective on neural networks, focusin
     * Hugging Face
     * Vertex AI
 
-**Presentation 2**: LLM Distillation - Fine Tuning
+## Presentation 2: LLM Distillation - Fine Tuning
 
 This presentation delves into the process of creating custom LLM models through fine-tuning.
 
-## Key Topics:
+**Key Topics:**
 
 * What is fine tuning (training-testing)
 * Types of fine tuning:
@@ -47,11 +47,11 @@ This presentation delves into the process of creating custom LLM models through 
 * Use case
 
 
-**Presentation 3**: LLM Deployment And Service Integration
+## Presentation 3: LLM Deployment And Service Integration
 
 This presentation focuses on deploying and integrating LLMs using Google Cloud Vertex AI.
 
-## Key Topics:
+**Key Topics:**
 
 * Google Cloud Vertex AI's and its role in deployment
 * Endpoints and Models
@@ -61,11 +61,11 @@ This presentation focuses on deploying and integrating LLMs using Google Cloud V
 * Use Case
 
 
-**Presentation 4**: Retrieval-Augmented Generation (RAG)
+## Presentation 4: Retrieval-Augmented Generation (RAG)
 
 This presentation explains Retrieval-Augmented Generation (RAG) and its applications.
 
-## Key Topics:
+**Key Topics:**
 * What is RAG?
 * Why RAG?
 * Grounding and Context
@@ -73,7 +73,9 @@ This presentation explains Retrieval-Augmented Generation (RAG) and its applicat
 * Distance Measurements
 * Real-world use case
 
-## RAG Functionalities (Example Use Case):
+## Real-world use case
+
+**RAG Functionalities:**
 
 * Create requests
 * Classification by priority
@@ -83,7 +85,7 @@ This presentation explains Retrieval-Augmented Generation (RAG) and its applicat
 * Predict fieldwork
 * Geographic location
 
-## Technologies used in RAG (Example Use Case):
+**Technologies used in RAG:**
 
 * Google Gemini
 * MongoDB - Vector Indexation
