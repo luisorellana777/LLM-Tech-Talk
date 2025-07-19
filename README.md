@@ -2,9 +2,8 @@
 
 This repository contains three presentations covering key concepts in Large Language Models (LLMs) and their applications:
 1. Multilayer Perceptron - Transformer Model - LLM Distillation
-2. LLM Distillation - Fine Tuning
-3. LLM Deployment And Service Integration
-4. Retrieval-Augmented Generation (RAG)
+2. LLM Distillation - Fine Tuning, Deployment and Integration
+3. Retrieval-Augmented Generation (RAG)
 
 ## Presentation 1: Multilayer Perceptron - Transformer Model - LLM Distillation
 
@@ -25,9 +24,9 @@ This presentation provides a theoretical perspective on neural networks, focusin
     * Hugging Face
     * Vertex AI
 
-## Presentation 2: LLM Distillation - Fine Tuning
+## Presentation 2: LLM Distillation - Fine Tuning, Deployment and Integration
 
-This presentation delves into the process of creating custom LLM models through fine-tuning.
+This presentation delves into the process of creating custom LLM models through fine-tuning. Also it focuses on deploying and integrating LLMs using Google Cloud Vertex AI
 
 **Key Topics:**
 
@@ -44,24 +43,12 @@ This presentation delves into the process of creating custom LLM models through 
     * Batch Size
     * Gradient Accumulation
     * Grid Search
-* Use case
-
-
-## Presentation 3: LLM Deployment And Service Integration
-
-This presentation focuses on deploying and integrating LLMs using Google Cloud Vertex AI.
-
-**Key Topics:**
-
+* Fine Tuning Use case
 * Google Cloud Vertex AI's and its role in deployment
-* Endpoints and Models
-* Costs of Using Models and Endpoints
-* Service integration with Python SDK Google Cloud Vertex AI
 * Decoder Strategies (Generation Parameters) for LLMs
-* Use Case
+* Deployment & integration Use Case
 
-
-## Presentation 4: Retrieval-Augmented Generation (RAG)
+## Presentation 3: Retrieval-Augmented Generation (RAG)
 
 This presentation explains Retrieval-Augmented Generation (RAG) and its applications.
 
